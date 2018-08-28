@@ -21,3 +21,12 @@ p {
 	color: pink;
 	padding: 30px;
 }
+
+.endQuote {
+	font-style: italic;
+}
+
+#specialId {
+	background: #789;
+	font-family: Courier;
+}
