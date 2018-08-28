@@ -1,0 +1,23 @@
+body {
+	background: #00ff00;
+}
+
+h1 {
+	color: blue;
+}
+
+h2 {
+	color: yellow;
+}
+
+p {
+	background: blue;
+	color: white;
+	padding: 5px;
+}
+
+.ptitle {
+	background: black;
+	color: pink;
+	padding: 30px;
+}
