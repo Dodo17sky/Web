@@ -1,0 +1,19 @@
+body {
+	background: #999;
+}
+
+nav.navbar-fixed-top {
+	background: black;
+}
+
+ul.nav.navbar-nav li a{
+	color: white;
+}
+
+div.container div.navbar-header a {
+	color: pink;
+}
+
+div.container div.navbar-header a:hover {
+	color: green;
+}
