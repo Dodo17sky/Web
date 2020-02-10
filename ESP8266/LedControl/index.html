@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>Using the XMLHttpRequest Object</h2>
+
+    <div id="demo">
+        <button type="button" onclick="LedOn_Btn()">Led ON</button>
+        <button type="button" onclick="LedOff_Btn()">Led OFF</button>
+        <button type="button" onclick="Google_Btn()">Google</button>
+    </div>
+
+    <script>
+        function reqListener () {
+          console.log(this.responseText);
+        }
+
+
+        function LedOn_Btn() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("textBox1").innerHTML =
+                        "Led ON action\n" + 
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "xmlhttp_info.txt", true);
+            xhttp.send();
+        }
+
+        function LedOff_Btn() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("textBox1").innerHTML =
+                        "Led OFF action\n" + 
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "xmlhttp_info.txt", true);
+            xhttp.send();
+        }
+
+        function Google_Btn() {
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", reqListener);
+            oReq.open("GET", "http://www.example.org/");
+            oReq.send();
+        }
+        
+    </script>
+
+    <p></p>
+
+    <textarea id="textBox1" name="text" cols="100" rows="25">
+    Add multiple lines of text here and watch the scrollbars grow...
+    </textarea>
+
+</body>
+
+</html>
