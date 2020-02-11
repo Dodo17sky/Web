@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LedControlApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Tutorial 1</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+
+    <body>
+        
+        <div ng-controller="LedState">
+            LED control <br>
+            <button ng-click=TurnOff()>Turn off</button>
+            <button ng-click=TurnOn()>Turn on</button>
+            <button ng-click=CallSite()>Any site</button>
+
+            <p>{{ActionResult}}</p>
+        </div>
+
+        <script>
+            var LedApp = angular.module('LedControlApp', []);
+            LedApp.controller('LedState', ['$scope', function($scope){
+                    $scope.ActionResult = 'None';
+                    $scope.TurnOff = function(){ $scope.ActionResult = "Led was turned off"; }
+                    $scope.TurnOn = function(){ $scope.ActionResult = "Led was turned on"; }
+                    $scope.CallSite = function(){
+                        $scope.ActionResult = "Site was called"; 
+
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.onreadystatechange = function() {
+                            console.log(xmlHttp.responseText);
+                        }
+                        xmlHttp.open("PUT", "http://www.example.org/", true);
+                        xmlHttp.send(null);
+                    }
+            }]);
+        </script>
+        
+    </body>
+
+
+</html>

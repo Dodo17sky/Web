@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Tutorial 1</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+
+
+    <body>
+        <div ng-init="myLang=[{name:'PHP', ext:'.php'},{name:'C++', ext:'.cpp'},{name:'Python', ext:'.py'}]">
+            <p ng-repeat="lang in myLang">
+                Name: {{lang.name}} <br>
+                Extension: {{lang.ext}} <br>
+            </p>
+        </div>
+    </body>
+
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myDrinkApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Tutorial 1</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+
+<!--
+    Model view tutorial
+    Model - how the application behaves with data
+    View - whatever is visible to the user
+    Controler - the coding that acts between the model and view
+
+    so 
+
+    Model <- - - - - Controler - - - -> View
+
+-->
+    <body>
+        
+        <div ng-controller="drinks">
+            Select your favourite drink: 
+            <button ng-click=caffe()>CAFFE</button>
+            <button ng-click=wather()>WATHER</button>
+            <button ng-click=wine()>WINE</button>
+
+            <p>You have selected {{selectedDrink}}</p>
+        </div>
+
+        <script>
+            var application = angular.module('myDrinkApp', []);
+            application.controller('drinks', ['$scope', function($scope){
+                    $scope.selectedDrink = 'None';
+                    $scope.caffe = function(){ $scope.selectedDrink = "Caffe"; }
+                    $scope.wather = function(){ $scope.selectedDrink = "Wather"; }
+                    $scope.wine = function(){ $scope.selectedDrink = "Wine"; }
+            }]);
+        </script>
+        
+    </body>
+
+
+</html>

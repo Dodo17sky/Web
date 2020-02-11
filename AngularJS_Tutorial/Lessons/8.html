@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Tutorial 1</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <script>
+            function msgLogFunction()
+            {
+                var myObject = {};
+                console.log("My object type is: ");
+                console.log(typeof myObject);
+            }
+        </script>
+
+    </head>
+
+<!--
+    Model view tutorial
+    Model - how the application behaves with data
+    View - whatever is visible to the user
+    Controler - the coding that acts between the model and view
+
+    so 
+
+    Model <- - - - - Controler - - - -> View
+
+-->
+    <body>
+        <input id="myBtn" type="button" value="Log msg" onclick="msgLogFunction()">
+    </body>
+
+
+</html>
