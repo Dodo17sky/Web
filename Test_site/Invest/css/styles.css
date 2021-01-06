@@ -1,0 +1,51 @@
+
+body {
+    background-color: #99ccff;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/*** Header ***/
+nav {
+    background-color: #454545;
+}
+
+#logo {
+    height: 80px;
+    margin-right: 25px;
+    /*background-color: cyan;*/
+}
+
+#logo-text {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #fff;
+    /*text-shadow: 2px 2px 2px gray;*/
+    /*background-color: yellow;*/
+}
+
+#mymenu a {
+    color: #ccffff;
+}
+
+#mymenu a:hover {
+    color: #00ccff;
+    background-color: #666666;
+}
+
+.navbar-toggler-- {
+    color: white;
+    background-color: red;
+}
+
+@media (max-width: 650px) {
+    #logo {
+        height: 50px;
+        display: none;
+    }
+
+    #logo-text {
+    }
+}
+
+
